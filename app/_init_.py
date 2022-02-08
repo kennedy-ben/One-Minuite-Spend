@@ -1,4 +1,6 @@
+from flask import bootstrap
 from flask import Flask
+import flask 
 from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
@@ -20,7 +22,7 @@ mail = Mail()
 
 def create_app(config_name):
 
-    app = Flask(__name__)
+    app = flask(__name__)
 
     # Creating the app configurations
 
