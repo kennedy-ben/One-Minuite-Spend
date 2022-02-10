@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse" role="navigation" style="background-color:#660000  ;">
+<div class="navbar navbar-inverse" role="navigation" style="background-color:#5e0066  ;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,7 +18,7 @@
         </div>
           <ul class="nav navbar-nav navbar-right">
             {% if current_user.is_authenticated %}
-            <li><a href="{{url_for('main.index',uname=current_user.username)}}">Profile</a></li>
+            <li><a href="{{url_for('index.html',uname=current_user.username)}}">Profile</a></li>
             <button class="btn btn-default"> <a href="/new/pickupline">ADD PITCH</a> </button>
             <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
             {% else %}
