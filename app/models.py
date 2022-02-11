@@ -1,5 +1,3 @@
-
-  
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
@@ -106,3 +104,12 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'User {self.name}'
+
+
+class Pitch(db.Model):
+    __tablename__ = 'pitch'
+    id = db.Column(db.Integer,primary_key = True)
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    category= db.Column(db.String(255),index = True)
+    content= db.Column(db.String(255)) 
+    comments = db.relationship('Comment', backref = 'pitch1', lazy = 'dynamic')
