@@ -1,5 +1,3 @@
-
-  
 from flask import Flask
 from flask import render_template,redirect,url_for
 from . import main
@@ -15,7 +13,7 @@ def index():
     View the root page function
     '''
     title = "Pitches"
-    return render_template('index.html', title = title,pitches=pitches)
+    return render_template('index.html')
 
 @main.route('/new/pitch', methods = ['GET','POST'])
 @login_required
@@ -53,12 +51,11 @@ def new_interview():
      
     return render_template('interview.html',formpitch = formpitch)   
 
-
-
 @main.route('/comment/new/<int:pitch_id>', methods = ['GET','POST'])
+
 @login_required
 def new_comment(pitch_id):  
     '''
     View the root page function
     '''
-    pass
+    pass                                                                                                                                     

@@ -1,5 +1,3 @@
-
-  
 import os
 
 class Config:
@@ -17,7 +15,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SUBJECT_PREFIX = 'Watchlist'
+    SUBJECT_PREFIX = 'pitches'
     SENDER_EMAIL = 'kennedybernard@moringaschool.com'
 
 # simple mde  configurations
@@ -33,10 +31,10 @@ class ProdConfig(Config):
     pass
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kennedy-ben:29654387@localhost/watchlist_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kennedy:567890@localhost/pitches'
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kennedy-ben:29654387@localhost/watchlist'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kennedy:567890@localhost/pitches'
     DEBUG = True
 
 config_options = {
